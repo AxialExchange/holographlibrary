@@ -22,48 +22,34 @@
  */
 
 package com.echo.holographlibrarysample;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 
 import java.util.ArrayList;
 
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.echo.holographlibrary.BarGraph;
-import com.echo.holographlibrary.Bar;
-import com.echo.holographlibrary.Line;
-import com.echo.holographlibrary.LinePoint;
-import com.echo.holographlibrary.LineGraph;
-import com.echo.holographlibrary.PieGraph;
-import com.echo.holographlibrary.PieSlice;
+public class MainActivity extends FragmentActivity {
 
-import android.os.Bundle;
-import android.app.Activity;
-import android.graphics.Color;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.view.Menu;
-
-public class MainActivity extends SherlockFragmentActivity {
-
-	ViewPager mViewPager;
+    ViewPager mViewPager;
     TabsAdapter mTabsAdapter;
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		
-		mViewPager = (ViewPager)this.findViewById(R.id.view_pager);
-		final ActionBar bar = this.getSupportActionBar();
-		bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		
-		LineFragment lineFrag = new LineFragment();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        mViewPager = (ViewPager) this.findViewById(R.id.view_pager);
+        final ActionBar bar = this.getActionBar();
+        bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        LineFragment lineFrag = new LineFragment();
         BarFragment barFrag = new BarFragment();
         PieFragment pieFrag = new PieFragment();
-		
+
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText("Line"),
                 LineFragment.class, null, lineFrag);
@@ -71,12 +57,13 @@ public class MainActivity extends SherlockFragmentActivity {
                 BarFragment.class, null, barFrag);
         mTabsAdapter.addTab(bar.newTab().setText("Pie"),
                 PieFragment.class, null, pieFrag);
-        mViewPager.setOffscreenPageLimit(mTabsAdapter.getCount()-1);
-	}
-	
-	public static class TabsAdapter extends FragmentStatePagerAdapter implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
 
-		private final MainActivity mContext;
+        mViewPager.setOffscreenPageLimit(mTabsAdapter.getCount() - 1);
+    }
+
+    public static class TabsAdapter extends FragmentStatePagerAdapter implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
+
+        private final MainActivity mContext;
         private final ActionBar mActionBar;
         private final ViewPager mViewPager;
         private final ArrayList<TabInfo> mTabs = new ArrayList<TabInfo>();
@@ -95,7 +82,7 @@ public class MainActivity extends SherlockFragmentActivity {
         public TabsAdapter(MainActivity activity, ViewPager pager) {
             super(activity.getSupportFragmentManager());
             mContext = activity;
-            mActionBar = activity.getSupportActionBar();
+            mActionBar = activity.getActionBar();
             mViewPager = pager;
             mViewPager.setAdapter(this);
             mViewPager.setOnPageChangeListener(this);
@@ -141,9 +128,9 @@ public class MainActivity extends SherlockFragmentActivity {
         }
 
         @Override
-        public void onTabSelected(Tab tab, FragmentTransaction ft) {
+        public void onTabSelected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
             Object tag = tab.getTag();
-            for (int i=0; i<mTabs.size(); i++) {
+            for (int i = 0; i < mTabs.size(); i++) {
                 if (mTabs.get(i) == tag) {
                     mViewPager.setCurrentItem(i);
                 }
@@ -151,11 +138,11 @@ public class MainActivity extends SherlockFragmentActivity {
         }
 
         @Override
-        public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+        public void onTabUnselected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
         }
 
         @Override
-        public void onTabReselected(Tab tab, FragmentTransaction ft) {
+        public void onTabReselected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
         }
     }
 

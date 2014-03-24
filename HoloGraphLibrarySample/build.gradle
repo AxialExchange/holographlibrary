@@ -15,6 +15,9 @@ android {
 
 dependencies {
     compile project(':HoloGraphLibrary')
+<<<<<<< HEAD
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+=======
+>>>>>>> df3d713303e46b0d277b8d06c8272b2f603ceaa3
 }
 

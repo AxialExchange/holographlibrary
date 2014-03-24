@@ -27,66 +27,75 @@ import android.graphics.Path;
 import android.graphics.Region;
 
 public class LinePoint {
-	private float x = 0;
-	private float y = 0;
-	private Path path;
-	private Region region;
-    private String color;
+    private float x = 0;
+    private float y = 0;
+    private Path path;
+    private Region region;
+    private int color = 0xff33b5e5;
 
-    public LinePoint(){
+    public LinePoint() {
     }
 
-	public LinePoint(double x, double y){
-		this.x = (float)x;
-		this.y = (float)y;
-	}
-	public LinePoint(float x, float y){
-		this.x = x;
-		this.y = y;
-	}
-	public float getX() {
-		return x;
-	}
-	public void setX(float x) {
-		this.x = x;
-	}
-	public float getY() {
-		return y;
-	}
-	public void setY(float y) {
-		this.y = y;
-	}
-	
-	public void setX(double x){
-		this.x = (float) x;
-	}
-	
-	public void setY(double y){
-		this.y = (float) y;
-	}
-	public Region getRegion() {
-		return region;
-	}
-	public void setRegion(Region region) {
-		this.region = region;
-	}
-	public Path getPath() {
-		return path;
-	}
-	public void setPath(Path path) {
-		this.path = path;
-	}
-	
-	@Override
-	public String toString(){
-		return "x= " + x + ", y= " + y;
-	}
-
-    public String getColor() {
-        return color != null ? color : "#33B5E5";
+    public LinePoint(double x, double y) {
+        this.x = (float) x;
+        this.y = (float) y;
     }
 
-    public void setColor(String color) {
+    public LinePoint(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    public void setX(double x) {
+        this.x = (float) x;
+    }
+
+    public void setY(double y) {
+        this.y = (float) y;
+    }
+
+    public Region getRegion() {
+        return region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
+    }
+
+    public Path getPath() {
+        return path;
+    }
+
+    public void setPath(Path path) {
+        this.path = path;
+    }
+
+    @Override
+    public String toString() {
+        return "x= " + x + ", y= " + y;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
         this.color = color;
     }
 }

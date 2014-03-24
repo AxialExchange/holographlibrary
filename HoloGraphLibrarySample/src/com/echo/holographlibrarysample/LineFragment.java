@@ -23,58 +23,55 @@
 
 package com.echo.holographlibrarysample;
 
-import java.util.ArrayList;
-
-import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.actionbarsherlock.app.SherlockFragment;
 import com.echo.holographlibrary.Line;
 import com.echo.holographlibrary.LineGraph;
 import com.echo.holographlibrary.LineGraph.OnPointClickedListener;
 import com.echo.holographlibrary.LinePoint;
 
-public class LineFragment extends SherlockFragment {
-	
-	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		final View v = inflater.inflate(R.layout.fragment_linegraph, container, false);
-		Line l = new Line();
-		LinePoint p = new LinePoint();
-		p.setX(0);
-		p.setY(5);
-        p.setColor("#FF0000");
-		l.addPoint(p);
-		p = new LinePoint();
-		p.setX(8);
-		p.setY(8);
-        p.setColor("#0000FF");
-		l.addPoint(p);
-		p = new LinePoint();
-		p.setX(10);
-		p.setY(4);
-		l.addPoint(p);
-        p.setColor("#00FF00");
-		l.setColor(Color.parseColor("#FFBB33"));
-		
-		LineGraph li = (LineGraph)v.findViewById(R.id.linegraph);
-		li.addLine(l);
-		li.setRangeY(0, 10);
-		li.setLineToFill(0);
-		
-		li.setOnPointClickedListener(new OnPointClickedListener(){
+public class LineFragment extends Fragment {
 
-			@Override
-			public void onClick(int lineIndex, int pointIndex) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
-		
-		return v;
-	}
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        final View v = inflater.inflate(R.layout.fragment_linegraph, container, false);
+        Line l = new Line();
+        LinePoint p = new LinePoint();
+        p.setX(1.21695165e12);
+        p.setY(5);
+        p.setColor(0xffFF0000);
+        l.addPoint(p);
+        p = new LinePoint();
+        p.setX(1.41695165e12);
+        p.setY(8);
+        p.setColor(0xffFF0000);
+        l.addPoint(p);
+        p = new LinePoint();
+        p.setX(2e12);
+        p.setY(4);
+        l.addPoint(p);
+        p.setColor(0xffFF0000);
+        l.setColor(0xffFFBB33);
+
+        LineGraph li = (LineGraph) v.findViewById(R.id.linegraph);
+        li.addLine(l);
+        li.setRangeY(0, 10);
+        li.setRangeX(1.2e12, 2.0e12);
+
+        li.setOnPointClickedListener(new OnPointClickedListener() {
+
+            @Override
+            public void onClick(int lineIndex, int pointIndex) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
+
+        return v;
+    }
 }
