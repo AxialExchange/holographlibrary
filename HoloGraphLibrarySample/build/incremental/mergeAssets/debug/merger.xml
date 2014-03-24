@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="HolographlibraryHoloGraphLibraryUnspecified.aar" >
+        <source path="/Users/acolclough/src/holographlibrary/HoloGraphLibrarySample/build/exploded-bundles/HolographlibraryHoloGraphLibraryUnspecified.aar/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/acolclough/src/holographlibrary/HoloGraphLibrarySample/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/acolclough/src/holographlibrary/HoloGraphLibrarySample/src/debug/assets" />
+    </dataSet>
+
+</merger>

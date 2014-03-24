@@ -6,7 +6,11 @@
 
     <uses-sdk
 <<<<<<< HEAD
+<<<<<<< HEAD
         android:minSdkVersion="8"
+=======
+        android:minSdkVersion="15"
+>>>>>>> df3d713303e46b0d277b8d06c8272b2f603ceaa3
 =======
         android:minSdkVersion="15"
 >>>>>>> df3d713303e46b0d277b8d06c8272b2f603ceaa3
