@@ -13,10 +13,7 @@ bin/
 gen/
 
 # Local configuration file (sdk path, etc)
-<<<<<<< HEAD
 *.properties
-=======
->>>>>>> df3d713303e46b0d277b8d06c8272b2f603ceaa3
 local.properties
 
 # Eclipse project files
@@ -31,11 +28,8 @@ proguard/
 *.ipr
 *.iws
 .idea/
-<<<<<<< HEAD
 
 out/
 .gradle
 build/
 HoloGraphLibrarySample/build
-=======
->>>>>>> df3d713303e46b0d277b8d06c8272b2f603ceaa3
