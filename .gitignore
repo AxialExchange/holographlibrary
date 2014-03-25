@@ -32,4 +32,5 @@ proguard/
 out/
 .gradle
 build/
+HoloGraphLibrary/build
 HoloGraphLibrarySample/build
