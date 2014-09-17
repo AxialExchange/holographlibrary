@@ -4,12 +4,12 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:0.7.+'
+    classpath 'com.android.tools.build:gradle:0.12.1'
   }
 }
 
-  repositories {
-    mavenCentral()
-  }
+  //repositories {
+  //  mavenCentral()
+ // }
 
 apply plugin: 'android-reporting'
